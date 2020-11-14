@@ -1,0 +1,29 @@
+{% extends 'default.html' %}
+
+{% block title %}API Method View{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/api_methodview.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="row mt-4 justify-content-center">
+                <div class="col-md-4 text-center">
+                    <button type="button" onclick="getAllProducts()" class="btn btn-primary">GET all products</button>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-md-4 text-center">
+                    <button type="button" onclick="getProductById()" class="btn btn-primary">GET product By ID</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

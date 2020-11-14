@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Pedro Henrique Bernini Silva">
+    <meta name="description" content="KaBuM! Flask Application">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/kabum.ico') }}"/>
+
+    <!-- FontAwesome Icons CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/external/fontawesome.all.min.css') }}">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/external/bootstrap.min.css') }}">
+
+    <!-- Material Design Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/external/mdb.min.css') }}">
+
+    <!-- Custom Styles CSS (All Pages) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}">
+
+    <!-- Custom Styles CSS (Page Specific) -->
+    {% block styles %}
+    {% endblock %}
+</head>
+
+<body class="bg-white loaded">
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light background-primary-color">
+        <div class="container">
+            <a class="navbar-brand white-text font-weight-bold" href="#">KaBuM! Flask Application</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link white-text font-weight-bold" href="/" id="navHome">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link white-text font-weight-bold" href="/api_methodview/" id="navSignals">API (MethodView)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link white-text font-weight-bold" href="/signals/" id="navSignals">Signals</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo da página -->
+    <div class="bg-white">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <!-- Rodapé da página -->
+    <footer class="text-center">
+        <p class="font-weight-bold text-primary-color mb-1 mt-2">
+            &copy;
+            <script type="text/javascript">document.write(new Date().getFullYear());</script> - 
+            KaBuM! Flask Application - By Pedro Bernini.
+        </p>
+    </footer>
+
+    <!-- Loader -->
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+
+    <!-- JQuery -->
+    <script src="{{ url_for('static', filename='js/external/jquery.min.js') }}"></script>
+
+    <!-- FontAwesome Icons -->
+    <script src="{{ url_for('static', filename='js/external/fontawesome.all.min.js') }}"></script>
+
+    <!-- Popper (Tooltips) -->
+    <script src="{{ url_for('static', filename='js/external/popper.min.js') }}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename='js/external/bootstrap.min.js') }}"></script>
+
+    <!-- Material Design Bootstrap -->
+    <script src="{{ url_for('static', filename='js/external/mdb.min.js') }}"></script>
+
+    <!-- SweetAlert Alerts -->
+    <script src="{{ url_for('static', filename='js/external/sweetalert2.all.min.js') }}"></script>
+
+    <!-- Charts -->
+    <script src="{{ url_for('static', filename='js/external/chart.min.js') }}"></script>
+
+    <!-- Config AJAX -->
+    <script src="{{ url_for('static', filename='js/ajax_setup.js') }}"></script>
+
+    <!-- Custom Scripts JS (All Pages) -->
+    <script src="{{ url_for('static', filename='js/alerts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <!-- Custom Scripts JS (Page Specific) -->
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>
