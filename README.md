@@ -1,4 +1,4 @@
-# Kabum Test
+# Kabum Application
 Basic Flask Application
 
 # Como rodar o projeto?
